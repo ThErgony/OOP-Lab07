@@ -1,7 +1,5 @@
 package it.unibo.oop.lab.nesting1;
 
-import it.unibo.oop.lab.socialnetwork.User;
-
 /**
  * This is going to act as a test for
  * {@link it.unibo.oop.lab.nesting1.SportSocialNetworkUserImpl}
@@ -29,12 +27,9 @@ public final class TestSportByStaticInnerClass {
          * 
          * Fernando Alonso, falonso, 34
          */
-        final SportSocialNetworkUserImpl<User> dcassani = new SportSocialNetworkUserImpl<>(
-        												"Davide", "Cassani", "dcassani", 53);
-        final SportSocialNetworkUserImpl<User> becclestone = new SportSocialNetworkUserImpl<>(
-        												"Bernie", "Ecclestone", "becclestone", 83);
-        final SportSocialNetworkUserImpl<User> falonso = new SportSocialNetworkUserImpl<>(
-        												"Fernando", "Alonso", "falonso", 34);
+        final var dcassani = new SportSocialNetworkUserImpl<>("Davide", "Cassani", "dcassani", 53);
+        final var becclestone = new SportSocialNetworkUserImpl<>("Bernie", "Ecclestone", "becclestone", 83);
+        final var falonso = new SportSocialNetworkUserImpl<>("Fernando", "Alonso", "falonso", 34);
 
         /*
          * TODO: alonso is a fan of soccer and bike and practices F1: 
