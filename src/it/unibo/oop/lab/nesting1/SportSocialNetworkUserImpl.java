@@ -4,6 +4,7 @@
 package it.unibo.oop.lab.nesting1;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import it.unibo.oop.lab.socialnetwork.SocialNetworkUserImpl;
@@ -53,12 +54,12 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * TODO: initialize properly these sports
      */
     static {
-        SOCCER = null;
-        F1 = null;
-        MOTOGP = null;
-        VOLLEY = null;
-        BASKET = null;
-        BIKE = null;
+        SOCCER = new Sport("Soccer");
+        F1 = new Sport("Formula 1");
+        MOTOGP = new Sport("Moto GP");
+        VOLLEY = new Sport("Volley");
+        BASKET = new Sport("Basket");
+        BIKE = new Sport("Bike");
     }
 
     /**
@@ -114,7 +115,15 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
     // TODO
     public void addSport(final Sport sport) {
-
+    	boolean present = false;
+    	for (final Sport s : sports) {
+			if (s == sport) {
+				present = true;
+			}
+		}
+    	if (!present) {
+    		this.sports.add(sport);
+		}
     }
 
     /**
@@ -126,7 +135,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
     // TODO
     public boolean hasSport(final Sport s) {
-        return false;
+        return this.sports.contains(s);
     }
 
     /*
@@ -142,9 +151,41 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
          * Redefine equals so that two sports are equal only if they feature the
          * very same name. Remember that you must also redefine hashCode()!
          */
-        @Override
+    	private final String name;
+    	private int hash;
+    	
+        /**
+         * constructor for sport name and hashing
+         * @param sportName
+         * 			required a valide name for the sport, if null send error message
+         */
+    	public Sport(final String sportName) {
+        	this.name = Objects.requireNonNull(sportName, "Require a valide name for the sport");
+        	this.hash = hashCode();
+		}
+    	
+    	/**
+    	 * create a new hashing code for the sport, using the name
+    	 * if sport is present don't change the hash
+    	 */
+    	@Override
+		public int hashCode() {
+			if (this.hash == 0) {
+				this.hash = this.name.hashCode();
+			}
+			return this.hash;
+		}
+
+		/**
+		 * override method, equals for the class with object passed, if the same
+		 * return if present the sport
+		 */
+		@Override
         public boolean equals(final Object o) {
-            return false;
+            if (this.getClass().equals(o.getClass())) {
+				return this.name.equals(o.getClass().getName());
+			}
+			return false;
         }
     }
 }
