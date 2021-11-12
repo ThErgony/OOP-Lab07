@@ -5,6 +5,7 @@ package it.unibo.oop.lab.enum1;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import it.unibo.oop.lab.socialnetwork.SocialNetworkUserImpl;
 import it.unibo.oop.lab.socialnetwork.User;
@@ -99,6 +100,6 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
     }
     
 //    public Set<Sport> getSports() {
-//		return this.sports;
+//		return new TreeSet<>(this.sports);
 //	}
 }
