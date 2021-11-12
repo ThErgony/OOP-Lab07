@@ -67,7 +67,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
     private final Set<Sport> sports;
 
-    /**
+	/**
      * Builds a new {@link SportSocialNetworkUserImpl}.
      * 
      * @param name
@@ -115,15 +115,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      */
     // TODO
     public void addSport(final Sport sport) {
-    	boolean present = false;
-    	for (final Sport s : sports) {
-			if (s == sport) {
-				present = true;
-			}
-		}
-    	if (!present) {
-    		this.sports.add(sport);
-		}
+   		this.sports.add(sport);
     }
 
     /**
@@ -177,8 +169,8 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
 		}
 
 		/**
-		 * override method, equals for the class with object passed, if the same
-		 * return if present the sport
+		 * override method equals for the class with object passed is the same
+		 * return true if the sport is present
 		 */
 		@Override
         public boolean equals(final Object o) {
