@@ -1,6 +1,5 @@
 package it.unibo.oop.lab.enum1;
 
-
 /**
  * This is going to act as a test for
  * {@link it.unibo.oop.lab.enum1.SportSocialNetworkUserImpl}
@@ -61,6 +60,5 @@ public final class TestSportByEnumeration {
                 + becclestone.hasSport(Sport.F1));
         System.out.println("Bernie does love playing also basket: "
                 + becclestone.hasSport(Sport.BASKET));
-        System.out.println(becclestone.hasSport(Sport.BASKET));
     }
 }
