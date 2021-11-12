@@ -28,7 +28,7 @@ public enum Sport {
 		this.sportName = sportName;
 	}
 
-	public String getSportName() {
+	public String toString() {
 		return this.sportName;
 	}
 	
