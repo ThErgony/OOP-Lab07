@@ -97,4 +97,8 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
     public boolean hasSport(final Sport s) {
         return this.sports.contains(s);
     }
+    
+//    public Set<Sport> getSports() {
+//		return this.sports;
+//	}
 }

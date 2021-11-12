@@ -56,9 +56,12 @@ public final class TestSportByEnumeration {
 
         becclestone.addSport(Sport.F1);
         becclestone.addSport(Sport.BASKET);
+//        becclestone.addSport(Sport.BASKET);
         System.out.println("Bernie's the boss when it comes to F1: "
                 + becclestone.hasSport(Sport.F1));
         System.out.println("Bernie does love playing also basket: "
                 + becclestone.hasSport(Sport.BASKET));
+        
+//        System.out.println(becclestone.getSports());
     }
 }
